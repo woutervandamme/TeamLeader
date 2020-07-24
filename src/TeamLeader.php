@@ -9,6 +9,8 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use MadeITBelgium\TeamLeader\Crm\Crm;
 use MadeITBelgium\TeamLeader\Deals\Deal;
+use MadeITBelgium\TeamLeader\Invoicing\Invoice;
+use MadeITBelgium\TeamLeader\Invoicing\Invoicing;
 use MadeITBelgium\TeamLeader\Webhooks\Webhook;
 
 /**
@@ -300,16 +302,17 @@ class TeamLeader
         return new Crm($this);
     }
 
+    public function invoicing()
+    {
+        return new Invoicing($this);
+    }
+
     public function deals()
     {
         return new Deal($this);
     }
 
     public function calendar()
-    {
-    }
-
-    public function invoicing()
     {
     }
 
